@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <style>
+            html, body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            }
+            #map {
+            height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+            <nav class="navbar navbar-default navbar-static-top" style="background: #333">
+            <div class="container">
+                <a class="navbar-brand" href="#">Connect2Community</a>
+            </div>
+            </nav>
+            <nav class="navbar navbar-default navbar-static-top" style="background: #666; margin-top:-20px">
+            <div class="container" style="line-height: 50px">
+                <b>Filter by:</b>
+                <select><option>Test</option></select>
+            </div>
+            </nav>
+            <div class="container" style="height: 700px">
+                <div id="map"></div>
+            </div>
+
+        <script>
+            var map;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 53.545065, lng: -2.632507},
+                    zoom: 12,
+                    });
+                    var position = putLocationOnMap('19 kenyon road standish wigan', map);
+                    getAddressesFromCalendar(map);
+                }
+            </script>
+            <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+            <script src="app.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAID1t1kX_OqNbD2jgh15VluR5hOvHTs4o&callback=initMap" async defer></script>
+        </body>
+    </html>
