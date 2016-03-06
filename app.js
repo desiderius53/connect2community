@@ -1,7 +1,7 @@
 function getAddressesFromCalendar (map,calendars) {
     $.each(calendars, function(key,value) {
         $.ajax({
-            url: value,
+            url: value.url,
             success: function (data) {
                 $.each(data.items, function( key, value ) {
                     console.log(value.location);
