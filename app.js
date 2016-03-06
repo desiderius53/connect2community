@@ -21,6 +21,7 @@ function putLocationOnMap (address, map) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( {'address': address}, function(results, status) {
             console.log("looking for location "+address);
+            console.log("results are:"+results);
             var marker1 = new google.maps.Marker({
                 map: map,
                 position: results[0].geometry.location
