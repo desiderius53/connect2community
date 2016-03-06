@@ -14,7 +14,7 @@ function getAddressesFromCalendar (map,calendars) {
 
 function addNewCalendar(calendars,calendar){
     calendars.push(calendar);
-    console.log(calendar.name + "and colour :" + calendar.colour);
+    console.log(calendar.name + " and colour :" + calendar.colour);
 }
 
 function putLocationOnMap (address, map) {
