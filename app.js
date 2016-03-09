@@ -1,4 +1,5 @@
 function getAddressesFromCalendar (map,calendars) {
+
     $.each(calendars, function(key,value) {
         $.ajax({
             url: value.url,
@@ -24,7 +25,8 @@ function putLocationOnMap (address, map) {
             console.log("results are:"+results);
             var marker1 = new google.maps.Marker({
                 map: map,
-                position: results[0].geometry.location
+                position: results[0].geometry.location,
+                icon: 'assets/Google_Maps_Markers/green_MarkerA.png'
             });
             console.log(results[0].geometry.location);
     });
